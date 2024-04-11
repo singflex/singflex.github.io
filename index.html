@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Towards Flexible Singing Voice Synthesis Through Decomposed Framework with Inferrable Features</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #000000;
+            color: white;
+            margin-bottom: 40px;
+        }
+        table {
+            margin: auto;
+            width: 80%;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            width: 20%;
+        }
+        th {
+            background-color: #000000;
+            color: white;
+        }
+        div {
+            width: 80%;
+            padding: 10px;
+            margin: auto;
+        }
+        tbody tr:hover {
+            background-color: #eee;
+        }
+        .main-description {
+            padding: 20px;
+            background-color: #f9f9f9;
+            font-size: 18px;
+        }
+        .table-description {
+            padding: 20px;
+            background-color: #4B3F72;
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+  </head>
+  <body>
+    <article>
+        <header>
+          <h2>Towards Flexible Singing Voice Synthesis Through Decomposed Framework with Inferrable Features</h2>
+        </header>
+      </article>
+
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>Sys.</th>
+            <th>Description</th>
+            <th>Song 1</th>
+            <th>Song 2</th>
+            <th>Song 3</th>
+            <th>Song 4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>NNSVS (Baseline)</td>
+            <td><audio controls><source src="JP_NNSVS/namine_ritsu_1st_color_seg5.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_NNSVS/namine_ritsu_ARROW_seg10.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_NNSVS/namine_ritsu_Closetoyou_seg22.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_NNSVS/namine_ritsu_ERROR_seg24.wav" type="audio/wav"></audio></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>SingFlex (Proposed)</td>
+            <td><audio controls><source src="JP_proposed/namine_ritsu_1st_color_seg5.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_proposed/namine_ritsu_ARROW_seg10.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_proposed/namine_ritsu_Closetoyou_seg22.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_proposed/namine_ritsu_ERROR_seg24.wav" type="audio/wav"></audio></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>SingFlex (w/o linguistic module)</td>
+            <td><audio controls><source src="JP_noling/namine_ritsu_1st_color_seg5.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_noling/namine_ritsu_ARROW_seg10.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_noling/namine_ritsu_Closetoyou_seg22.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_noling/namine_ritsu_ERROR_seg24.wav" type="audio/wav"></audio></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>SingFlex (w/o large scale pretraining)</td>
+            <td><audio controls><source src="JP_nopt/namine_ritsu_1st_color_seg5.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_nopt/namine_ritsu_ARROW_seg10.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_nopt/namine_ritsu_Closetoyou_seg22.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_nopt/namine_ritsu_ERROR_seg24.wav" type="audio/wav"></audio></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>SingFlex (w/ singer conversion)</td>
+            <td><audio controls><source src="JP_proppjs/namine_ritsu_1st_color_seg5.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_proppjs/namine_ritsu_ARROW_seg10.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_proppjs/namine_ritsu_Closetoyou_seg22.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="JP_proppjs/namine_ritsu_ERROR_seg24.wav" type="audio/wav"></audio></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>SingFlex (w/ speech linguistic module)</td>
+            <td><audio controls><source src="EN_spling/KENN04_5.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="EN_spling/KENN04_9.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="EN_spling/KENN04_10.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="EN_spling/KENN04_10.wav" type="audio/wav"></audio></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>SingFlex (w/o linguistic module)</td>
+            <td><audio controls><source src="EN_noling/KENN04_5.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="EN_noling/KENN04_9.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="EN_noling/KENN04_10.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="EN_noling/KENN04_10.wav" type="audio/wav"></audio></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>SingFlex (w/ bilingual inpainting)</td>
+            <td><audio controls><source src="EN_inpainting/1.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="EN_inpainting/2.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="EN_inpainting/3.wav" type="audio/wav"></audio></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Japanese Ground Truth</td>
+            <td><audio controls><source src="GT_JP/namine_ritsu_1st_color_seg5.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="GT_JP/namine_ritsu_ARROW_seg10.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="GT_JP/namine_ritsu_Closetoyou_seg22.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="GT_JP/namine_ritsu_ERROR_seg24.wav" type="audio/wav"></audio></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>English Ground Truth</td>
+            <td><audio controls><source src="GT_English/KENN04_5.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="GT_English/KENN04_9.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="GT_English/KENN04_10.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="GT_English/KENN04_10.wav" type="audio/wav"></audio></td>
+          </tr>
+        </tbody>
+      </table>
+
+  </body>
+</html>
